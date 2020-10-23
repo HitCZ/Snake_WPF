@@ -7,6 +7,7 @@
   Title="MainMenuView"
   Width="800"
   Height="450"
+  WindowStartupLocation="CenterScreen"
   mc:Ignorable="d">
   <Window.Resources>
     <Style BasedOn="{StaticResource MenuItemButtonStyle}" TargetType="{x:Type Button}" />

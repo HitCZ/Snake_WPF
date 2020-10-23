@@ -55,11 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Logic\Enums\Direction.cs" />
+    <Compile Include="Logic\Exceptions\InsufficientSizeException.cs" />
+    <Compile Include="Logic\Extensions\ColumnDefinitionCollectionExtensions.cs" />
+    <Compile Include="Logic\Extensions\RowDefinitionCollectionExtensions.cs" />
     <Compile Include="Logic\Extensions\StringExtensions.cs" />
+    <Compile Include="Logic\Grid\GridProvider.cs" />
+    <Compile Include="Logic\Grid\GridSizeCalculator.cs" />
     <Compile Include="Logic\NotificationObject.cs" />
+    <Compile Include="Logic\Other\GlobalValues.cs" />
     <Compile Include="Logic\RelayCommand.cs" />
+    <Compile Include="Models\Snake\BodyPart.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
+    <Compile Include="Views\GameScreen.xaml.cs">
+      <DependentUpon>GameScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
     </Compile>
@@ -68,6 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,8 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

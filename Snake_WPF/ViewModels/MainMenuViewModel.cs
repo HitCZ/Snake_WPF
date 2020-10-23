@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
+using Snake_WPF.Views;
 
 namespace Snake_WPF.ViewModels
 {
@@ -42,7 +43,8 @@ namespace Snake_WPF.ViewModels
 
         private void NewGameCommandExecute()
         {
-            throw new NotImplementedException();
+            var gameScreen = new GameScreen();
+            gameScreen.Show();
         }
 
         private void ExitCommandExecute()

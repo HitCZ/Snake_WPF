@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_WPF", "Snake_WPF\Snake_WPF.csproj", "{CBC9A4A4-59B7-4FCF-9E9D-CE85B7B8A186}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake_WPF_Tests", "Snake_WPF_Tests\Snake_WPF_Tests.csproj", "{40911439-6506-4E9E-B517-235912D018B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CBC9A4A4-59B7-4FCF-9E9D-CE85B7B8A186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC9A4A4-59B7-4FCF-9E9D-CE85B7B8A186}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBC9A4A4-59B7-4FCF-9E9D-CE85B7B8A186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40911439-6506-4E9E-B517-235912D018B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40911439-6506-4E9E-B517-235912D018B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40911439-6506-4E9E-B517-235912D018B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40911439-6506-4E9E-B517-235912D018B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
