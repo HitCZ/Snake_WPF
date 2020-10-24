@@ -40,10 +40,10 @@ namespace Snake_WPF.Logic.Grid
 
         private static double GetRoundedResult(double size)
         {
-            var rows = size / GlobalValues.BODY_PART_SIZE;
-            var ceilRows = Math.Ceiling(rows);
+            var result = size / GlobalValues.BODY_PART_SIZE;
+            var roundedResult = Math.Ceiling(result);
 
-            return ceilRows;
+            return roundedResult;
         }
 
         #endregion Private Methods

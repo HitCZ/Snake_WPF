@@ -1,0 +1,39 @@
+﻿<Window
+  x:Class="Snake_WPF.Views.SettingsView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:Snake_WPF.Views"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:selectors="clr-namespace:Snake_WPF.Logic.Selectors"
+  xmlns:components="clr-namespace:Snake_WPF.Components"
+  Title="SettingsView"
+  Width="800"
+  Height="450"
+  mc:Ignorable="d"
+  FocusManager.FocusedElement="{Binding ElementName=Content}">
+  <Window.Resources>
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MenuItemButtonStyle}"/>
+
+    <selectors:SettingsTemplateSelector x:Key="SettingsTemplateSelector">
+      <selectors:SettingsTemplateSelector.DefaultTemplate>
+        <DataTemplate>
+          <components:MenuControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Button
+              Command="{Binding ViewModel.SelectSettingsCommand, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsView}}}"
+              CommandParameter="{Binding .}"
+              Content="Control Settings" />
+          </components:MenuControl>
+        </DataTemplate>
+      </selectors:SettingsTemplateSelector.DefaultTemplate>
+      <selectors:SettingsTemplateSelector.ControlSettingsTemplate>
+        <DataTemplate>
+          <local:ControlSettingsControl Settings="{Binding .}" />
+        </DataTemplate>
+      </selectors:SettingsTemplateSelector.ControlSettingsTemplate>
+    </selectors:SettingsTemplateSelector>
+  </Window.Resources>
+  <Grid>
+    <ContentControl x:Name="Content" Content="{Binding ViewModel.SelectedSettingsType, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsView}}}" ContentTemplateSelector="{StaticResource SettingsTemplateSelector}" />
+  </Grid>
+</Window>

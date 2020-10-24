@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Components\MenuControl.cs" />
     <Compile Include="Logic\Enums\Direction.cs" />
     <Compile Include="Logic\Exceptions\InsufficientSizeException.cs" />
     <Compile Include="Logic\Extensions\ColumnDefinitionCollectionExtensions.cs" />
@@ -65,9 +66,18 @@
     <Compile Include="Logic\NotificationObject.cs" />
     <Compile Include="Logic\Other\GlobalValues.cs" />
     <Compile Include="Logic\RelayCommand.cs" />
+    <Compile Include="Logic\Selectors\SettingsTemplateSelector.cs" />
+    <Compile Include="Logic\Settings\SettingsManager.cs" />
+    <Compile Include="Models\Settings\ControlSettings.cs" />
+    <Compile Include="Models\Settings\GraphicSettings.cs" />
+    <Compile Include="Models\Settings\Settings.cs" />
     <Compile Include="Models\Snake\BodyPart.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\ControlSettingsControl.xaml.cs">
+      <DependentUpon>ControlSettingsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GameScreen.xaml.cs">
       <DependentUpon>GameScreen.xaml</DependentUpon>
     </Compile>
@@ -78,7 +88,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ControlSettingsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

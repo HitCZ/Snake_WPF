@@ -2,19 +2,25 @@
   x:Class="Snake_WPF.Views.MainMenuView"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:components="clr-namespace:Snake_WPF.Components"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   Title="MainMenuView"
   Width="800"
   Height="450"
+  FocusManager.FocusedElement="{Binding ElementName=Menu}"
   WindowStartupLocation="CenterScreen"
   mc:Ignorable="d">
   <Window.Resources>
     <Style BasedOn="{StaticResource MenuItemButtonStyle}" TargetType="{x:Type Button}" />
   </Window.Resources>
 
-  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+  <components:MenuControl
+    x:Name="Menu"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center">
     <Button Command="{Binding NewGameCommand}" Content="New Game" />
+    <Button Command="{Binding SettingsCommand}" Content="Settings" />
     <Button Command="{Binding ExitCommand}" Content="Exit" />
-  </StackPanel>
+  </components:MenuControl>
 </Window>

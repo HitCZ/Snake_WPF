@@ -6,7 +6,7 @@ using Snake_WPF.Views;
 
 namespace Snake_WPF.ViewModels
 {
-    public class MainMenuViewModel : NotificationObject 
+    public class MainMenuViewModel : NotificationObject
     {
         #region Commands
 
@@ -18,7 +18,13 @@ namespace Snake_WPF.ViewModels
 
         public ICommand NewGameCommand
         {
-            get => GetPropertyValue<ICommand>(); 
+            get => GetPropertyValue<ICommand>();
+            set => SetPropertyValue(value);
+        }
+
+        public ICommand SettingsCommand
+        {
+            get => GetPropertyValue<ICommand>();
             set => SetPropertyValue(value);
         }
 
@@ -39,6 +45,13 @@ namespace Snake_WPF.ViewModels
         {
             ExitCommand = new RelayCommand(ExitCommandExecute);
             NewGameCommand = new RelayCommand(NewGameCommandExecute);
+            SettingsCommand = new RelayCommand(SettingsCommandExecute);
+        }
+
+        private void SettingsCommandExecute()
+        {
+            var settingsView = new SettingsView();
+            settingsView.ShowDialog();
         }
 
         private void NewGameCommandExecute()
@@ -49,8 +62,8 @@ namespace Snake_WPF.ViewModels
 
         private void ExitCommandExecute()
         {
-            var result = MessageBox.Show("Are you sure you want to exit?", "Exit confirmation", 
-                MessageBoxButton.YesNo,MessageBoxImage.Question);
+            var result = MessageBox.Show("Are you sure you want to exit?", "Exit confirmation",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
                 Application.Current.Shutdown();

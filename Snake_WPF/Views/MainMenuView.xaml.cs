@@ -1,4 +1,6 @@
-﻿using Snake_WPF.ViewModels;
+﻿using System.Windows;
+using System.Windows.Input;
+using Snake_WPF.ViewModels;
 
 namespace Snake_WPF.Views
 {
