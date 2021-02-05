@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:Snake_WPF.Components"
+  xmlns:settings="clr-namespace:Snake_WPF.Logic.Settings">
+
+  <DataTemplate DataType="{x:Type settings:KeyBinding}">
+    <DockPanel>
+      <TextBlock DockPanel.Dock="Left" Text="{Binding Caption}" />
+      <Button
+        Command="{Binding OpenBindingDialogCommand, RelativeSource={RelativeSource AncestorType={x:Type local:ControlSettingsControl}}}"
+        CommandParameter="{Binding .}"
+        Content="{Binding BoundKey}"
+        DockPanel.Dock="Right" />
+    </DockPanel>
+  </DataTemplate>
+
+  <ControlTemplate x:Key="Template" TargetType="{x:Type local:ControlSettingsControl}">
+    <ItemsControl ItemsSource="{Binding Settings.SettingsItems, RelativeSource={RelativeSource AncestorType={x:Type local:ControlSettingsControl}}}" />
+  </ControlTemplate>
+
+  <Style TargetType="{x:Type local:ControlSettingsControl}">
+    <Style.Setters>
+      <Setter Property="Template" Value="{StaticResource Template}" />
+    </Style.Setters>
+  </Style>
+</ResourceDictionary>

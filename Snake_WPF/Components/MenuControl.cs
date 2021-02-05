@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Snake_WPF.Logic.Settings;
 
 namespace Snake_WPF.Components
 {
@@ -21,6 +18,10 @@ namespace Snake_WPF.Components
 
 
         #endregion Properties
+
+        #region Commands
+
+        #endregion Commands
 
         #region Constructor
 
@@ -65,7 +66,6 @@ namespace Snake_WPF.Components
         #endregion Public Methods
 
         #region Private Methods
-
 
 
         #endregion Private Methods

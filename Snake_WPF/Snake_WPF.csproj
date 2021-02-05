@@ -35,6 +35,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\lukas\Dropbox\CSharp projekty\!Libraries\Common\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,31 +62,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Builders\Settings\ControlSettingsBuilder.cs" />
+    <Compile Include="Components\ControlSettingsControl.cs" />
     <Compile Include="Components\MenuControl.cs" />
     <Compile Include="Logic\Enums\Direction.cs" />
+    <Compile Include="Logic\Enums\SettingsViewType.cs" />
     <Compile Include="Logic\Exceptions\InsufficientSizeException.cs" />
     <Compile Include="Logic\Extensions\ColumnDefinitionCollectionExtensions.cs" />
+    <Compile Include="Logic\Extensions\ControlSettingsExtensions.cs" />
     <Compile Include="Logic\Extensions\RowDefinitionCollectionExtensions.cs" />
-    <Compile Include="Logic\Extensions\StringExtensions.cs" />
     <Compile Include="Logic\Grid\GridProvider.cs" />
     <Compile Include="Logic\Grid\GridSizeCalculator.cs" />
-    <Compile Include="Logic\NotificationObject.cs" />
+    <Compile Include="Logic\Observers\IParametricObserver.cs" />
+    <Compile Include="Logic\Observers\KeyBindingObserver.cs" />
     <Compile Include="Logic\Other\GlobalValues.cs" />
-    <Compile Include="Logic\RelayCommand.cs" />
     <Compile Include="Logic\Selectors\SettingsTemplateSelector.cs" />
+    <Compile Include="Logic\Settings\KeyBinding.cs" />
     <Compile Include="Logic\Settings\SettingsManager.cs" />
     <Compile Include="Models\Settings\ControlSettings.cs" />
     <Compile Include="Models\Settings\GraphicSettings.cs" />
     <Compile Include="Models\Settings\Settings.cs" />
     <Compile Include="Models\Snake\BodyPart.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\KeyBindingViewModel.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="Views\ControlSettingsControl.xaml.cs">
-      <DependentUpon>ControlSettingsControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\GameScreen.xaml.cs">
       <DependentUpon>GameScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyBindingView.xaml.cs">
+      <DependentUpon>KeyBindingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
@@ -91,15 +103,23 @@
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\ControlSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ControlSettingsControl.xaml">
+    <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyBindingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +150,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

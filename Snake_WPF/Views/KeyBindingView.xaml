@@ -1,0 +1,19 @@
+﻿<Window
+  x:Class="Snake_WPF.Views.KeyBindingView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  Title="KeyBindingView"
+  Width="800"
+  Height="450"
+  FocusManager.FocusedElement="{Binding ElementName=MainGrid}"
+  mc:Ignorable="d"
+  KeyDown="KeyBindingView_OnKeyDown">
+  <Grid
+    x:Name="MainGrid"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch">
+    <TextBlock Text="Press Key you want to bind to..." Focusable="False" />
+  </Grid>
+</Window>

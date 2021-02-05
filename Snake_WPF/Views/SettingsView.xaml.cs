@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using Snake_WPF.ViewModels;
 
 namespace Snake_WPF.Views
 {
     /// <summary>
     /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class SettingsView
     {
+        public SettingsViewModel ViewModel
+        {
+            get => DataContext as SettingsViewModel; 
+            set => DataContext = value;
+        }
+
         public SettingsView()
         {
             InitializeComponent();
+            ViewModel = new SettingsViewModel
+            {
+                CloseAction = Close
+            };
         }
     }
 }

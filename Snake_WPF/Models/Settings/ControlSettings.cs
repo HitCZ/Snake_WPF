@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Snake_WPF.Logic.Settings;
+using KeyBinding = Snake_WPF.Logic.Settings.KeyBinding;
 
 namespace Snake_WPF.Models.Settings
 {
@@ -6,10 +9,7 @@ namespace Snake_WPF.Models.Settings
     {
         #region Properties
 
-        public Key Up { get; set; }
-        public Key Down { get; set; }
-        public Key Left { get; set; }
-        public Key Right { get; set; }
+        public ObservableCollection<KeyBinding> SettingsItems { get; set; }
 
         #endregion Properties
 
@@ -17,14 +17,6 @@ namespace Snake_WPF.Models.Settings
 
         public ControlSettings()
         {
-        }
-
-        public ControlSettings(Key up, Key down, Key left, Key right)
-        {
-            Up = up;
-            Down = down;
-            Left = left;
-            Right = right;
         }
 
         #endregion Constructors

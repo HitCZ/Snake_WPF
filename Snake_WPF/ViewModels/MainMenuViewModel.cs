@@ -2,6 +2,8 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
+using Common.Commands;
+using Common.WPF;
 using Snake_WPF.Views;
 
 namespace Snake_WPF.ViewModels
